@@ -5,9 +5,6 @@ var port = process.env.PORT || 3001;
 
 
 
-app.get("/", function (req,res){
-  res.send("Hello Universe yes");
-});
 
 
 
@@ -29,6 +26,14 @@ function getRandomWord (object) {
   return {word: randomProp};
 }
 
+
+app.get("/", function (req,res){
+  res.send("Hello Universe yes");
+});
+
+app.get("/adjective", function (req,res){
+  res.json(getRandomWord(adjective));
+});
 
 
 
